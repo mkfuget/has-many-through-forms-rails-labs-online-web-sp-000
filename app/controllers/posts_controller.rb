@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 
   def create
     post = Post.create(post_params)
+    puts post.users
     redirect_to post
   end
 
