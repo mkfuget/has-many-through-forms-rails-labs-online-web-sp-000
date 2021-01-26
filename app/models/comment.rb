@@ -14,6 +14,7 @@ class Comment < ActiveRecord::Base
     if !user_id.blank?
       self.user = User.find(user_id)
       puts self.user.username
+      self.save
     end
 
   end
