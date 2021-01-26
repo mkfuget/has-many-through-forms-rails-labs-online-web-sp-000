@@ -13,3 +13,9 @@
 <% @post.unique_users.each do |user| %>
   <li><%=link_to user.username, user_path(user)%></li>
 <%end%>
+<%= form_for @appointment do |f| %>
+  <%= f.datetime_select :appointment_datetime %>
+  <%= f.collection_select :doctor, Doctor.all, :id, :name %>
+  <%= f.collection_select :patient, Patient.all, :id, :name %>
+  <%= f.submit %>
+<% end %>
