@@ -14,7 +14,6 @@
   <li><%=link_to user.username, user_path(user)%></li>
 <%end%>
 <%= form_for @comment do |f| %>
-  <%= f.datetime_select :appointment_datetime %>
   <%= f.hidden_field :post_id, value: @post.id %>
   <%= f.collection_select :user_id, User.all, :id, :name %>
   <%= f.text_area :content %>
