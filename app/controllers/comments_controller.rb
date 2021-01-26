@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     comment = Comment.create(comment_params)
     if(params[:comment][:user_attributes][:username].blank?)
       comment.user = User.find(params[:comment][:user_id])
+      comment.save
     end
     redirect_to comment.post
   end
