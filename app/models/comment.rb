@@ -6,14 +6,13 @@ class Comment < ActiveRecord::Base
     if !user_id.blank?
 
       self.user = User.find_or_create_by(id: user_id)
+      puts self.user.user_name
     end
   end
 
   def user_attributes=(user_attribute)
     if !user_attribute.blank?
       self.user = User.find_or_create_by(user_attribute)
-      self.save
-
     end
   end
 
