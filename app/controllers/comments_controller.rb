@@ -3,9 +3,6 @@ class CommentsController < ApplicationController
   def create
     puts params
     comment = Comment.create(comment_params)
-    comment.user = User.find(params[:comment][:user_id])
-    puts User.all
-    puts comment.user
     redirect_to comment.post
   end
 
