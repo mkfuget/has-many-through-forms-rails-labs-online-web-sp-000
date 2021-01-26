@@ -4,6 +4,7 @@ class Comment < ActiveRecord::Base
   accepts_nested_attributes_for :user, reject_if: :all_blank
 
   def user_attributes=(user_attribute)
+    puts "test"
     if !user_attribute.blank?
       self.user = User.find_or_create_by(user_attribute)
     end
