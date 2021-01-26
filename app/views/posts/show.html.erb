@@ -7,7 +7,7 @@
 <p><%=@post.content%></p>
 <ul>
 <% @post.comments.each do |comment| %>
-  <li><%= "TEST#{comment.user} says: #{comment.content}"%></li>
+  <li><%= "TEST#{comment.user.username} says: #{comment.content}"%></li>
 <%end%>
 <ul>
 <% @post.unique_users.each do |user| %>
