@@ -5,7 +5,7 @@ class Comment < ActiveRecord::Base
   def user_id=(user_id)
     if !user_attribute.blank?
 
-      self.artist = Artist.find_or_create_by(id: user_id)
+      self.artist = User.find_or_create_by(id: user_id)
     end
   end
 
