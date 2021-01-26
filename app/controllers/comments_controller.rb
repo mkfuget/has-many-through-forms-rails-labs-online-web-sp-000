@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   def create
     puts params
     comment = Comment.create(comment_params)
-    puts comment.post.users.map{|user| user.username }
+    puts comment.post.users.first.username
     redirect_to comment.post
   end
 
