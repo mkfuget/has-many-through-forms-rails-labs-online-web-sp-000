@@ -3,7 +3,10 @@ class Comment < ActiveRecord::Base
   belongs_to :post
   accepts_nested_attributes_for :user
   def user_id=(user_id)
-    self.artist = Artist.find_or_create_by(name: name)
+    if !user_attribute.blank?
+
+      self.artist = Artist.find_or_create_by(name: name)
+    end
   end
 
   def user_attributes=(user_attribute)
