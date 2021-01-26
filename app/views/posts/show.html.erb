@@ -16,9 +16,8 @@
 <%= form_for @comment do |f| %>
   <%= f.hidden_field :post_id, value: @post.id %>
   <%= f.collection_select :user_id, User.all, :id, :username %>
-  <%= f.fields_for :users do |users_fields| %>
-    <%= users_fields.text_field :username %>
-  <% end %>
+  <input type="text" name="comment[user_attributes][0][username]" id="comment_user_attributes_name">
+
 
   <%= f.text_area :content %>
   <%= f.submit %>
