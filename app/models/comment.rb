@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
   belongs_to :post
   accepts_nested_attributes_for :user
   def user_id=(user_id)
-    if !user.id.blank?
+    if !user_id.blank?
       self.user = User.find(user_id)
     end
 
